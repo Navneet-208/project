@@ -1,0 +1,395 @@
+/* Universal Styles & Base Layout */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #cc0000; /* Primary color for M-Headphones (e.g., a bold red/accent) */
+}
+
+/* --- Navbar Styling (Horizontal Layout) --- */
+#header {
+    background-color: #333; /* Darker header for premium feel */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: white; /* White logo on dark background */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #cc0000; /* Hover color matches primary accent */
+}
+
+/* --- Buttons Styling & Hover Animation --- */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    border: none;
+}
+
+.primary-btn {
+    background-color: #cc0000;
+    color: white;
+}
+
+.secondary-btn {
+    background-color: #fff;
+    color: #cc0000;
+    border: 2px solid #cc0000;
+}
+
+.primary-btn:hover {
+    background-color: #a30000;
+    transform: translateY(-2px); /* Hover animation */
+}
+
+.secondary-btn:hover {
+    background-color: #cc0000;
+    color: white;
+    transform: translateY(-2px); /* Hover animation */
+}
+
+/* Custom hover for pricing card button */
+.hover-grow:hover {
+    transform: scale(1.05); 
+}
+
+/* --- Banner Section Styling (Full-width image + title) --- */
+#banner {
+    /* NOTE: Replace the random image URL with a high-quality photo of M-Headphones */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url('https://picsum.photos/1200/500?random=3') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+    height: 500px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.banner-content p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+}
+
+/* --- Features Section Styling (Responsive Grid Layout) --- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.feature-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.feature-box h3 {
+    color: #333; 
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+/* --- Pricing Section Styling (Responsive Grid Layout + Cards) --- */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.pricing-card {
+    background: white;
+    padding: 40px 20px;
+    border-radius: 10px;
+    border: 2px solid #ddd; /* Border */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Shadow */
+    transition: transform 0.3s;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card.recommended {
+    border-color: #cc0000; /* Recommended card highlight */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-card h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 3em;
+    font-weight: 700;
+    color: #cc0000;
+    margin-bottom: 25px;
+}
+
+.pricing-card ul {
+    list-style: none;
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+.pricing-card ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+
+
+/* --- Footer Section Styling --- */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #cc0000;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* ================================================= */
+/* --- Media Query: Max-width 768px (Stacking) --- */
+/* ================================================= */
+
+@media (max-width: 768px) {
+    
+    /* Global: Force single column stacking */
+    .features-grid, 
+    .pricing-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    /* Navbar Stacking */
+    nav {
+        flex-direction: column;
+        padding: 15px 5%;
+    }
+
+    nav ul {
+        margin-top: 10px;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    /* Banner Adjustments */
+    #banner {
+        height: 400px;
+        padding: 80px 20px;
+    }
+
+    .banner-content h1 {
+        font-size: 2.5em;
+    }
+
+    .banner-content p {
+        font-size: 1.1em;
+    }
+}
+
+/* Reviews Section Styling */
+#reviews {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 60px 20px;
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+
+#reviews h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.review-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border-left: 4px solid #ddd;
+    position: relative;
+}
+
+.review-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.review-card.verified {
+    border-left: 4px solid #4CAF50;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f9f7 100%);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.reviewer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.reviewer-info strong {
+    font-size: 1.1rem;
+    color: #1a1a1a;
+}
+
+.verified-badge {
+    font-size: 0.85rem;
+    color: #4CAF50;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.badge-badge {
+    font-size: 0.85rem;
+    color: #ff9800;
+    font-weight: 600;
+}
+
+.rating {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.review-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin: 12px 0;
+}
+
+.review-card p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 15px 0;
+    font-style: italic;
+}
+
+.review-meta {
+    font-size: 0.85rem;
+    color: #999;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #reviews h2 {
+        font-size: 1.8rem;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .review-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
